@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ProcedureKit
 
 protocol SignInViewControllerDelegate: class {
     func signInViewControllerCancelled(_ controller: SignInViewController)
@@ -20,22 +21,47 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     
     weak var delegate: SignInViewControllerDelegate?
+    let operationQueue = ProcedureQueue()
     
     //MARK: Actions
     
     @IBAction func signIn(_ sender: Any) {
-        emailField.resignFirstResponder()
-        passwordField.resignFirstResponder()
-        
+        executeSignWith(create: false)
     }
     
     @IBAction func createAccount(_ sender: Any) {
-        emailField.resignFirstResponder()
-        passwordField.resignFirstResponder()
+        executeSignWith(create: true)
     }
     
     @IBAction func cancel(_ sender: Any) {
         delegate?.signInViewControllerCancelled(self)
+    }
+    
+    //MARK: Private
+    
+    private func executeSignWith(create: Bool) {
+        emailField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        guard let email = emailField.text,
+            let password = passwordField.text,
+            email.characters.count > 0,
+            password.characters.count > 0 else { showEmptyFieldAlert(); return }
+        
+        let operation = SignInOperation(email: email, password: password, createAccount: create)
+        operation.addDidFinishBlockObserver { (operation, errors) in
+            if case let .ready(value) = operation.result {
+                print("value: \(value)")
+            } else if let error = errors.first {
+                print("error: \(error)")
+            }
+        }
+        operationQueue.add(operation: operation)
+    }
+    
+    private func showEmptyFieldAlert() {
+        let alert = UIAlertController(title: "Oops", message: "One or more fields are blank", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
 
