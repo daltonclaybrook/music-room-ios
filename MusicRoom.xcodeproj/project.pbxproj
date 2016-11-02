@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		756234051DC98E3C00C4A025 /* PresentableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756234041DC98E3C00C4A025 /* PresentableError.swift */; };
 		75DF436E1DC83DA600641BE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DF436D1DC83DA600641BE8 /* AppDelegate.swift */; };
 		75DF43701DC83DA600641BE8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DF436F1DC83DA600641BE8 /* HomeViewController.swift */; };
 		75DF43731DC83DA600641BE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75DF43711DC83DA600641BE8 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		4E0AD58E050463854FEAD28E /* Pods-MusicRoom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicRoom.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicRoom/Pods-MusicRoom.release.xcconfig"; sourceTree = "<group>"; };
 		56F85FCDEDC961C417B417E2 /* Pods_MusicRoom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicRoom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		756234041DC98E3C00C4A025 /* PresentableError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentableError.swift; sourceTree = "<group>"; };
 		75DF436A1DC83DA600641BE8 /* MusicRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75DF436D1DC83DA600641BE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75DF436F1DC83DA600641BE8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		756234031DC98E2200C4A025 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				756234041DC98E3C00C4A025 /* PresentableError.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		75DF43611DC83DA600641BE8 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +91,7 @@
 		75DF436C1DC83DA600641BE8 /* MusicRoom */ = {
 			isa = PBXGroup;
 			children = (
+				756234031DC98E2200C4A025 /* Model */,
 				75DF43901DC84EF300641BE8 /* Business */,
 				75DF438B1DC84AC000641BE8 /* Extensions/Utility */,
 				75DF43831DC843AC00641BE8 /* Presentation */,
@@ -295,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				756234051DC98E3C00C4A025 /* PresentableError.swift in Sources */,
 				75DF438E1DC84AD300641BE8 /* UIView+Additions.swift in Sources */,
 				75DF43701DC83DA600641BE8 /* HomeViewController.swift in Sources */,
 				75DF43921DC84F4400641BE8 /* SignInOperation.swift in Sources */,

@@ -165,7 +165,7 @@
                                 <rect key="frame" x="164" y="617" width="47" height="30"/>
                                 <state key="normal" title="Sign In"/>
                                 <connections>
-                                    <segue destination="1hF-Ru-Fu2" kind="presentation" id="vV7-zY-Efm"/>
+                                    <segue destination="1hF-Ru-Fu2" kind="presentation" identifier="SignInSegue" id="vV7-zY-Efm"/>
                                 </connections>
                             </button>
                         </subviews>

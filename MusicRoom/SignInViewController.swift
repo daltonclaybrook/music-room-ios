@@ -22,6 +22,18 @@ class SignInViewController: UIViewController {
     
     weak var delegate: SignInViewControllerDelegate?
     let operationQueue = ProcedureQueue()
+    private let loadingView = LoadingView()
+    
+    //MARK: Superclass
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        #if DEBUG
+        emailField.text = "daltonclaybrook@gmail.com"
+        passwordField.text = "password"
+        #endif
+    }
     
     //MARK: Actions
     
@@ -47,12 +59,16 @@ class SignInViewController: UIViewController {
             email.characters.count > 0,
             password.characters.count > 0 else { showEmptyFieldAlert(); return }
         
+        loadingView.showInView(view: view)
         let operation = SignInOperation(email: email, password: password, createAccount: create)
-        operation.addDidFinishBlockObserver { (operation, errors) in
-            if case let .ready(value) = operation.result {
-                print("value: \(value)")
+        operation.addDidFinishBlockObserver { [weak self] (operation, errors) in
+            guard let strongSelf = self else { return }
+            strongSelf.loadingView.hide()
+            
+            if case .ready(_) = operation.result {
+                strongSelf.delegate?.signInViewControllerSignedIn(strongSelf)
             } else if let error = errors.first {
-                print("error: \(error)")
+                strongSelf.showAlertForError(error: error)
             }
         }
         operationQueue.add(operation: operation)
@@ -60,6 +76,13 @@ class SignInViewController: UIViewController {
     
     private func showEmptyFieldAlert() {
         let alert = UIAlertController(title: "Oops", message: "One or more fields are blank", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func showAlertForError(error: Error) {
+        let authError = error as? PresentableError ?? UnknownError()
+        let alert = UIAlertController(title: authError.title, message: authError.message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
     }
