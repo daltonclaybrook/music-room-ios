@@ -270,7 +270,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Rooms" id="FXu-jw-8OK">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="thV-fX-Kya"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="thV-fX-Kya">
+                            <connections>
+                                <action selector="addRoom:" destination="9FY-WY-an6" id="x5F-yf-IZF"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="fzG-wK-I8K" id="KHQ-SK-iLy"/>

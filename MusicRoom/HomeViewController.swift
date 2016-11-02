@@ -25,6 +25,26 @@ class HomeViewController: UIViewController {
         ]
         tableView.reloadData()
     }
+    
+    //MARK: Actions
+    
+    @IBAction func addRoom(_ sender: Any) {
+        let alert = UIAlertController(title: "Add Room", message: "Enter a name", preferredStyle: .alert)
+        alert.addTextField { (field) in
+            field.placeholder = "Name"
+        }
+        alert.addAction(UIAlertAction(title: "Create", style: .default) { [weak self, weak alert] action in
+            self?.addRoom(with: alert?.textFields?.first?.text ?? "")
+        })
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    //MARK: Private
+    
+    private func addRoom(with name: String) {
+        
+    }
 }
 
 extension HomeViewController: UITableViewDataSource {

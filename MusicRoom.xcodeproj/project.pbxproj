@@ -11,6 +11,7 @@
 		756234071DC9981600C4A025 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756234061DC9981600C4A025 /* HomeViewController.swift */; };
 		756234091DC99AFC00C4A025 /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756234081DC99AFC00C4A025 /* RoomCell.swift */; };
 		7562340B1DC99C1900C4A025 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7562340A1DC99C1900C4A025 /* Room.swift */; };
+		7562340D1DC9A70700C4A025 /* CreateRoomOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7562340C1DC9A70700C4A025 /* CreateRoomOperation.swift */; };
 		75DF436E1DC83DA600641BE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DF436D1DC83DA600641BE8 /* AppDelegate.swift */; };
 		75DF43701DC83DA600641BE8 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DF436F1DC83DA600641BE8 /* SplashViewController.swift */; };
 		75DF43731DC83DA600641BE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75DF43711DC83DA600641BE8 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		756234061DC9981600C4A025 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		756234081DC99AFC00C4A025 /* RoomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
 		7562340A1DC99C1900C4A025 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		7562340C1DC9A70700C4A025 /* CreateRoomOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRoomOperation.swift; sourceTree = "<group>"; };
 		75DF436A1DC83DA600641BE8 /* MusicRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75DF436D1DC83DA600641BE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75DF436F1DC83DA600641BE8 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				75DF43911DC84F4400641BE8 /* SignInOperation.swift */,
+				7562340C1DC9A70700C4A025 /* CreateRoomOperation.swift */,
 			);
 			name = Business;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				75DF43921DC84F4400641BE8 /* SignInOperation.swift in Sources */,
 				75DF43871DC8498300641BE8 /* LoadingView.swift in Sources */,
 				756234071DC9981600C4A025 /* HomeViewController.swift in Sources */,
+				7562340D1DC9A70700C4A025 /* CreateRoomOperation.swift in Sources */,
 				75DF436E1DC83DA600641BE8 /* AppDelegate.swift in Sources */,
 				75DF438F1DC84AD300641BE8 /* Keyboard.swift in Sources */,
 				756234091DC99AFC00C4A025 /* RoomCell.swift in Sources */,
