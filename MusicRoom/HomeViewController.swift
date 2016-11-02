@@ -16,11 +16,12 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 50
         
         rooms = [
             Room(name: "Party", owner: "d4ltr0n", participantCount: 4, nowPlaying: "Fart by Lady Gaga"),
-            Room(name: "Dance", owner: "drew", participantCount: 4, nowPlaying: "Tits by Fart"),
-            Room(name: "H00d R4Tz", owner: "p4t5y", participantCount: 4, nowPlaying: "Ass by Bey")
+            Room(name: "Dance", owner: "drew", participantCount: 1, nowPlaying: "Tits by Fart"),
+            Room(name: "H00d R4Tz", owner: "p4t5y", participantCount: 0, nowPlaying: "Ass by Bey")
         ]
         tableView.reloadData()
     }

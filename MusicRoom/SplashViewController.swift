@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 
 let SignInSegue = "SignInSegue"
+let HomeSegue = "HomeSegue"
 
 class SplashViewController: UIViewController {
     
@@ -26,7 +27,9 @@ class SplashViewController: UIViewController {
 extension SplashViewController: SignInViewControllerDelegate {
     
     func signInViewControllerSignedIn(_ controller: SignInViewController) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) {
+            self.performSegue(withIdentifier: HomeSegue, sender: nil)
+        }
     }
     
     func signInViewControllerCancelled(_ controller: SignInViewController) {
