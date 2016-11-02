@@ -149,10 +149,10 @@
             </objects>
             <point key="canvasLocation" x="1024.8" y="-566.26686656671666"/>
         </scene>
-        <!--Home-->
+        <!--Splash-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="MusicRoom" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SplashViewController" customModule="MusicRoom" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -175,10 +175,110 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7iK-lp-cXq" secondAttribute="bottom" constant="20" id="xBN-FN-KNe"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="Zt8-dm-OhL"/>
+                    <navigationItem key="navigationItem" title="Splash" id="Zt8-dm-OhL"/>
+                    <connections>
+                        <segue destination="9FY-WY-an6" kind="show" identifier="HomeSegue" id="DTX-7m-3hW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="136"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="aj3-Tu-9dP">
+            <objects>
+                <viewController title="Home" id="9FY-WY-an6" customClass="HomeViewController" customModule="MusicRoom" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2RA-uC-d6p"/>
+                        <viewControllerLayoutGuide type="bottom" id="CGR-pz-r4f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fmn-4O-4MR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fzG-wK-I8K">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RoomCell" id="Z72-9V-XcY" customClass="RoomCell" customModule="MusicRoom" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z72-9V-XcY" id="I81-IT-9uA">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" misplaced="YES" text="Room Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="As6-Bd-TAk">
+                                                    <rect key="frame" x="8" y="8" width="94" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" misplaced="YES" text="Owner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQt-dj-rpw">
+                                                    <rect key="frame" x="8" y="30" width="51" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="People Inside" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BEm-N8-RU1">
+                                                    <rect key="frame" x="264" y="8" width="103" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="250" misplaced="YES" text="Now playing" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUy-iq-L6u">
+                                                    <rect key="frame" x="273" y="30" width="94" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="fUy-iq-L6u" secondAttribute="trailing" constant="8" id="C1H-dR-rMZ"/>
+                                                <constraint firstItem="NQt-dj-rpw" firstAttribute="leading" secondItem="I81-IT-9uA" secondAttribute="leading" constant="8" id="IMR-Oz-TUc"/>
+                                                <constraint firstItem="NQt-dj-rpw" firstAttribute="top" secondItem="As6-Bd-TAk" secondAttribute="bottom" constant="4" id="Pw2-DX-I3K"/>
+                                                <constraint firstItem="As6-Bd-TAk" firstAttribute="leading" secondItem="I81-IT-9uA" secondAttribute="leading" constant="8" id="ZX7-h7-FB9"/>
+                                                <constraint firstItem="fUy-iq-L6u" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NQt-dj-rpw" secondAttribute="trailing" constant="10" id="eKQ-OY-BNH"/>
+                                                <constraint firstAttribute="bottom" secondItem="NQt-dj-rpw" secondAttribute="bottom" constant="8" id="fW4-ti-VDM"/>
+                                                <constraint firstItem="As6-Bd-TAk" firstAttribute="top" secondItem="I81-IT-9uA" secondAttribute="top" constant="8" id="hqY-JJ-Szw"/>
+                                                <constraint firstAttribute="trailing" secondItem="BEm-N8-RU1" secondAttribute="trailing" constant="8" id="m0A-0r-8pD"/>
+                                                <constraint firstItem="fUy-iq-L6u" firstAttribute="top" secondItem="BEm-N8-RU1" secondAttribute="bottom" constant="4" id="me2-Tq-dJa"/>
+                                                <constraint firstItem="BEm-N8-RU1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="As6-Bd-TAk" secondAttribute="trailing" constant="10" id="nTF-2B-C5z"/>
+                                                <constraint firstAttribute="bottom" secondItem="fUy-iq-L6u" secondAttribute="bottom" constant="8" id="uSB-X5-Dcg"/>
+                                                <constraint firstItem="BEm-N8-RU1" firstAttribute="top" secondItem="I81-IT-9uA" secondAttribute="top" constant="8" id="yoC-0Z-J2h"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="As6-Bd-TAk" id="Q9w-1l-YxS"/>
+                                            <outlet property="nowPlayingLabel" destination="fUy-iq-L6u" id="nNz-Ll-VUy"/>
+                                            <outlet property="ownerLabel" destination="NQt-dj-rpw" id="Cc8-ih-rAv"/>
+                                            <outlet property="peopleCountLabel" destination="BEm-N8-RU1" id="Nv7-uz-SxF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9FY-WY-an6" id="5fj-Cg-PbM"/>
+                                    <outlet property="delegate" destination="9FY-WY-an6" id="xfo-Rs-VSp"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fzG-wK-I8K" firstAttribute="leading" secondItem="Fmn-4O-4MR" secondAttribute="leading" id="Gp6-RZ-3Nk"/>
+                            <constraint firstItem="fzG-wK-I8K" firstAttribute="top" secondItem="Fmn-4O-4MR" secondAttribute="top" id="L47-tZ-LzV"/>
+                            <constraint firstAttribute="trailing" secondItem="fzG-wK-I8K" secondAttribute="trailing" id="ML4-RZ-Y5j"/>
+                            <constraint firstItem="CGR-pz-r4f" firstAttribute="top" secondItem="fzG-wK-I8K" secondAttribute="bottom" id="ejC-oC-gBj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Rooms" id="FXu-jw-8OK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="thV-fX-Kya"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="fzG-wK-I8K" id="KHQ-SK-iLy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f8w-ci-lOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1024.8" y="135.38230884557723"/>
         </scene>
     </scenes>
 </document>
