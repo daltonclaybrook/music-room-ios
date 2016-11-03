@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import ProcedureKit
 
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     fileprivate var rooms = [Room]()
+    private let operationQueue = ProcedureQueue()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,7 @@ class HomeViewController: UIViewController {
             Room(name: "H00d R4Tz", owner: "p4t5y", participantCount: 0, nowPlaying: "Ass by Bey")
         ]
         tableView.reloadData()
+        fetchRooms()
     }
     
     //MARK: Actions
@@ -42,8 +45,22 @@ class HomeViewController: UIViewController {
     
     //MARK: Private
     
+    private func fetchRooms() {
+        DatabaseManager.shared.observeRooms { (rooms) in
+            
+        }
+    }
+    
     private func addRoom(with name: String) {
-        
+        guard name.characters.count > 0 else { showEmptyFieldAlert(); return }
+        let operation = CreateRoomOperation(roomName: name)
+        operationQueue.addOperation(operation)
+    }
+    
+    private func showEmptyFieldAlert() {
+        let alert = UIAlertController(title: "Oops", message: "Room name must not be blank", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
 

@@ -12,5 +12,14 @@ struct Room {
     let name: String
     let owner: String
     let participantCount: Int
-    let nowPlaying: String
+    let nowPlaying: String?
+    
+    func toDictionary() -> [String: Any] {
+        return [
+            "name": name,
+            "owner": owner,
+            "participantCount": participantCount,
+            "nowPlaying": nowPlaying as Any
+        ]
+    }
 }

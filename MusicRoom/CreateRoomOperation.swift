@@ -26,10 +26,15 @@ class CreateRoomOperation: Procedure, ResultInjection {
     
     override func execute() {
         guard !isCancelled else { return }
+        let ref = FIRDatabase.database().reference()
+        guard let owner = FIRAuth.auth()?.currentUser?.uid else {
+            assertionFailure("user is not authenticated")
+            finish()
+            return
+        }
         
-//        let ref = FIRDatabase.database().reference()
-//        guard let owner = FIRAuth.auth()?.currentUser?.uid else { finish() }
-//        
-//        ref.child("rooms").childByAutoId().setValue(<#T##value: Any?##Any?#>)
+        let room = Room(name: roomName, owner: owner, participantCount: 0, nowPlaying: nil).toDictionary()
+        ref.child("rooms").childByAutoId().setValue(room, andPriority: "fizzbuzz")
+        finish()
     }
 }

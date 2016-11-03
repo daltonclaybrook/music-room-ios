@@ -12,6 +12,7 @@
 		756234091DC99AFC00C4A025 /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756234081DC99AFC00C4A025 /* RoomCell.swift */; };
 		7562340B1DC99C1900C4A025 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7562340A1DC99C1900C4A025 /* Room.swift */; };
 		7562340D1DC9A70700C4A025 /* CreateRoomOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7562340C1DC9A70700C4A025 /* CreateRoomOperation.swift */; };
+		756234111DCAD72500C4A025 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756234101DCAD72500C4A025 /* DatabaseManager.swift */; };
 		75DF436E1DC83DA600641BE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DF436D1DC83DA600641BE8 /* AppDelegate.swift */; };
 		75DF43701DC83DA600641BE8 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DF436F1DC83DA600641BE8 /* SplashViewController.swift */; };
 		75DF43731DC83DA600641BE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75DF43711DC83DA600641BE8 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		756234081DC99AFC00C4A025 /* RoomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
 		7562340A1DC99C1900C4A025 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		7562340C1DC9A70700C4A025 /* CreateRoomOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRoomOperation.swift; sourceTree = "<group>"; };
+		756234101DCAD72500C4A025 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		75DF436A1DC83DA600641BE8 /* MusicRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75DF436D1DC83DA600641BE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75DF436F1DC83DA600641BE8 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +79,23 @@
 				7562340A1DC99C1900C4A025 /* Room.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		7562340E1DCAD71400C4A025 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				75DF43911DC84F4400641BE8 /* SignInOperation.swift */,
+				7562340C1DC9A70700C4A025 /* CreateRoomOperation.swift */,
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
+		7562340F1DCAD71C00C4A025 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				756234101DCAD72500C4A025 /* DatabaseManager.swift */,
+			);
+			name = Manager;
 			sourceTree = "<group>";
 		};
 		75DF43611DC83DA600641BE8 = {
@@ -178,8 +197,8 @@
 		75DF43901DC84EF300641BE8 /* Business */ = {
 			isa = PBXGroup;
 			children = (
-				75DF43911DC84F4400641BE8 /* SignInOperation.swift */,
-				7562340C1DC9A70700C4A025 /* CreateRoomOperation.swift */,
+				7562340F1DCAD71C00C4A025 /* Manager */,
+				7562340E1DCAD71400C4A025 /* Operations */,
 			);
 			name = Business;
 			sourceTree = "<group>";
@@ -320,6 +339,7 @@
 			files = (
 				756234051DC98E3C00C4A025 /* PresentableError.swift in Sources */,
 				75DF438E1DC84AD300641BE8 /* UIView+Additions.swift in Sources */,
+				756234111DCAD72500C4A025 /* DatabaseManager.swift in Sources */,
 				75DF43701DC83DA600641BE8 /* SplashViewController.swift in Sources */,
 				75DF43921DC84F4400641BE8 /* SignInOperation.swift in Sources */,
 				75DF43871DC8498300641BE8 /* LoadingView.swift in Sources */,
